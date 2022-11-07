@@ -2,7 +2,6 @@ package com.pass.passbatch.job.pass;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +23,6 @@ import com.pass.passbatch.repository.pass.PassEntity;
 import com.pass.passbatch.repository.pass.PassRepository;
 import com.pass.passbatch.repository.pass.PassStatus;
 
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -40,11 +38,11 @@ class ExpirePassesJobConfigTest {
 	private PassRepository repository;
 
 	@Test
-	void expirePassesStep () throws Exception {
-	    //given
+	void expirePassesStep() throws Exception {
+		//given
 		addPassEntities(10);
 
-	    //when
+		//when
 		JobExecution jobExecution = jobLauncherTestUtils.launchJob();
 		JobInstance jobInstance = jobExecution.getJobInstance();
 
@@ -52,9 +50,6 @@ class ExpirePassesJobConfigTest {
 		assertEquals(ExitStatus.COMPLETED, jobExecution.getExitStatus());
 		assertEquals("expirePassesJob", jobInstance.getJobName());
 	}
-
-
-
 
 	private void addPassEntities(int size) {
 		LocalDateTime now = LocalDateTime.now();

@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BulkPassRepository extends JpaRepository<BulkPassEntity, Integer> {
-    // WHERE status = :status AND startedAt > :startedAt
-    List<BulkPassEntity> findByStatusAndStartedAtGreaterThan(BulkPassStatus status, LocalDateTime startedAt);
+	// WHERE status = :status AND startedAt > :startedAt
+	List<BulkPassEntity> findByStatusAndStartedAtGreaterThan(BulkPassStatus status, LocalDateTime startedAt);
 
 }
