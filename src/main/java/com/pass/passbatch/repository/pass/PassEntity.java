@@ -9,6 +9,7 @@ import lombok.ToString;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+
 @Getter
 @Setter
 @ToString
@@ -21,6 +22,7 @@ public class PassEntity extends BaseEntity {
     private Integer packageSeq;
     private String userId;
 
+    @Enumerated(EnumType.STRING)
     private PassStatus status;
     private Integer remainingCount;
 
